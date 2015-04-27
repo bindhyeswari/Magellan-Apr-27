@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Closure</title>
+    <script>
+
+        var x = 2;
+
+        function createClosure() {
+            var p = 30;
+            return function () {
+                return p++;
+            }
+        }
+
+        var fn = createClosure(); // fn  + scope of fn
+
+        console.log(fn()); // 30
+        console.log(fn()); // 31
+        var fn2 = createClosure();
+        console.log(fn2()); // 30
+        console.log(fn2()); // 31
+
+
+        function createClosure2() {
+            var p = 10;
+            return {
+                id: 'asdf2-asdfsadf2516',
+                printid: function () {
+                    console.log('value of p is ' + p);
+                    console.log(this.id);
+                },
+                get val() {
+                    return p; // fix this or show an alternative
+                },
+                set val(value) {
+                    p = value;
+                }
+            };
+        }
+
+        var obj = createClosure2();
+        obj.printid();
+        console.log(x.val);
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

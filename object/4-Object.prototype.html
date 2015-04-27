@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Object.prototype</title>
+    <script>
+
+        var obj = {
+            val: 'chris',
+            valueOf: function () {
+                return this.val;
+            }
+        };
+
+        console.log(-obj + 2); // +
+
+        console.log(obj + obj);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

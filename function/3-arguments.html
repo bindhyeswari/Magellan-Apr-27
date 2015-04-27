@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        function sum(x, y) {
+            console.log(sum.caller);
+            return x + y;
+        }
+
+        function invoke(fn) {
+
+            var args = Array.prototype.slice.call(arguments, 1);
+
+            console.log(fn.apply(null, args));
+        }
+
+        //console.log(sum(1,2));
+
+        //onsole.log(sum.apply({name: 'Chris'}, [10,15]));
+        //sum.apply({name: 'Rashmika'});
+
+        invoke(sum, 1, 2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

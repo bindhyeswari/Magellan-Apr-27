@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Property attributes</title>
+    <script>
+
+        // 'use strict';
+
+        var x = {
+            name: 'Chris',
+            type: 'UI Developer',
+            join: Date.now()
+        };
+
+        console.log(Object.getOwnPropertyDescriptor(x, 'name'));
+
+
+        Object.defineProperty(x, 'name', {
+            writable: false,
+            enumerable: false,
+            configurable: false
+        });
+
+        x.name = 'Rashmika';
+        console.log(x.name);
+
+        console.log('enumeration ... ');
+        for (var prop in x) {
+            if (x.hasOwnProperty(prop)) console.log(prop);
+        }
+
+        console.log(Object.keys(x));
+        console.log(Object.getOwnPropertyNames(x));
+
+        // chris's code ends here
+
+
+        // rogue code begins here
+        Object.defineProperty(x, 'name', {
+            configurable: true
+        });
+
+        x.name = 'bp';
+        console.log(x.name);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

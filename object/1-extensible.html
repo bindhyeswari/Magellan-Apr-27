@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Extensible attribute</title>
+    <script>
+
+        // 'use strict'; this will give a type error
+
+        var obj = {
+            name: 'Rashmika'
+        };
+
+        Object.preventExtensions(obj);
+        obj.id = 'df865dfs-351a3dsf13df';
+
+        console.log(obj.id);
+        console.log(Object.isExtensible(obj));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

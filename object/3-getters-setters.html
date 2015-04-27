@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Getters Setter</title>
+    <script>
+
+        var x = {
+            name: 'Rashmika' // data property
+        };
+
+        var y = {
+            _name: 'Rashmika', // data property
+            get name() {
+                return _name;
+            },
+            set name(val) {
+                if (/^[a-z]+$/.test(val)) _name = val;
+            }
+        };
+
+        function Person(id) {
+            var _id = id;
+            Object.defineProperty(this, 'id', {
+
+                get: function () {
+                    return _id;
+                },
+                set: function (val) {
+                    val = val.toString();
+                    // check the value and set it
+                    if(/^\d+$/.test(val))
+                        _id = val;
+                }
+            });
+        }
+
+        var chris = new Person(64);
+        console.log(chris.id);
+        chris.id = 32;
+        console.log(chris.id);
+        chris.id = 'invalid data';
+        console.log(chris.id);
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
